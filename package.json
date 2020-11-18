@@ -1,0 +1,49 @@
+{
+  "name": "vue-rlc",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=10"
+  },
+  "description": "A Vue 3 renderless component library",
+  "main": "dist/vue-rlc.cjs.prod.js",
+  "module": "dist/vue-rlc.es.prod.js",
+  "unpkg": "dist/vue-rlc.iife.prod.js",
+  "jsdelivr": "dist/vue-rlc.iife.prod.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iendeavor/vue-rlc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iendeavor/vue-rlc/issues"
+  },
+  "homepage": "https://iendeavor.github.io/vue-rlc",
+  "author": "Ernest <iendeavor.github.io@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "husky": "^4.3.0",
+    "jest": "^26.6.3",
+    "prettier": "^2.1.2",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.33.3",
+    "rollup-plugin-node-globals": "^1.4.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "ts-jest": "^26.4.4",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.5"
+  },
+  "scripts": {
+    "build": "yarn build:lib && yarn build:types",
+    "build:lib": "rollup -c rollup.config.js",
+    "build:types": "tsc --declaration --declarationDir dist --emitDeclarationOnly src/index.ts",
+    "test": "jest",
+    "lint": "prettier --check ."
+  }
+}
