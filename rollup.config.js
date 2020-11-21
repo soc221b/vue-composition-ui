@@ -4,6 +4,7 @@ import ts from 'rollup-plugin-typescript2'
 import { terser } from 'rollup-plugin-terser'
 import resolve from '@rollup/plugin-node-resolve'
 import globals from 'rollup-plugin-node-globals'
+import vue from 'rollup-plugin-vue'
 
 rm.sync(path.resolve('dist/**/*'))
 
@@ -17,7 +18,11 @@ const configs = []
 formats.forEach(format => {
   const config = {
     input,
+    external: ['vue'],
     output: {
+      globals: {
+        vue: 'Vue',
+      },
       format,
       name: pascalCasePackageName,
     },
@@ -25,13 +30,7 @@ formats.forEach(format => {
 
   configs.push({
     ...config,
-    plugins: [
-      ts({
-        exclude: ['test/**/*'],
-      }),
-      resolve(),
-      globals(),
-    ],
+    plugins: [vue(), ts(), resolve(), globals()],
     output: {
       ...config.output,
       file: path.resolve(`dist/${packageName}.${format}.js`),
@@ -40,14 +39,7 @@ formats.forEach(format => {
 
   configs.push({
     ...config,
-    plugins: [
-      ts({
-        exclude: ['test/**/*'],
-      }),
-      resolve(),
-      globals(),
-      terser(),
-    ],
+    plugins: [vue(), ts(), resolve(), globals(), terser()],
     output: {
       ...config.output,
       file: path.resolve(`dist/${packageName}.${format}.prod.js`),

@@ -2,6 +2,6 @@
   "hooks": {
     "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
     "pre-commit": "yarn lint && yarn tsc --noEmit",
-    "pre-push": "git diff --exit-code && git diff --staged --exit-code && yarn lint && yarn test"
+    "pre-push": "git diff --exit-code && git diff --staged --exit-code && yarn lint && yarn build && yarn test"
   }
 }
