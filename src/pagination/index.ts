@@ -3,43 +3,16 @@ import { createRange } from '../util'
 
 import type { Ref } from 'vue'
 
-// utils
-export const isValidNumber = (n: unknown) => {
-  if (n === undefined) return true
-
-  if (typeof n !== 'number') return false
-  if (Object.is(n, NaN)) return false
-  if (n > Number.MAX_SAFE_INTEGER) return false
-  if (n <= 0) return false
-
-  return true
-}
-export const calcTotalPageSize = (perPageSize: number, totalSize: number) => {
-  return Math.ceil(totalSize / perPageSize)
-}
-
-// effects
-export const guaranteePageSizeInPageSizes = (currentPage: Ref<number>, totalPageSize: Ref<number>) => {
-  if (currentPage.value < 1) currentPage.value = 1
-  if (currentPage.value > totalPageSize.value) currentPage.value = totalPageSize.value
-  if (Object.is(currentPage.value, NaN)) currentPage.value = 1
-}
-export const isValidPageSize = (currentPage: Ref<number>, totalPageSize: Ref<number>) => {
-  return (
-    Object.is(currentPage.value, NaN) === false && currentPage.value >= 1 && currentPage.value <= totalPageSize.value
-  )
-}
-
 export interface UsePaginationParams {
   currentPage: Ref<number>
   perPageSize: Ref<number>
   totalSize: Ref<number>
 }
 
-export const usePagination = ({ currentPage, perPageSize, totalSize }: UsePaginationParams) => {
-  if (isValidNumber(currentPage.value) === false) throw Error('Invalid param: currentPage.')
-  if (isValidNumber(perPageSize.value) === false) throw Error('Invalid param: perPageSize.')
-  if (isValidNumber(totalSize.value) === false) throw Error('Invalid param: totalSize.')
+export function usePagination({ currentPage, perPageSize, totalSize }: UsePaginationParams) {
+  validatePageNumber('currentPage', currentPage.value)
+  validatePageNumber('perPageSize', perPageSize.value)
+  validatePageNumber('totalSize', totalSize.value)
 
   const state: {
     currentPage: number
@@ -47,44 +20,66 @@ export const usePagination = ({ currentPage, perPageSize, totalSize }: UsePagina
     totalSize: number
     readonly currentPerPageSize: number
     readonly totalPageSize: number
-    readonly pages: number[]
+    readonly pageRange: number[]
 
+    readonly currentStartSize: number
+    readonly currentEndSize: number
+
+    readonly isFirstPage: boolean
     readonly firstPage: number
-    readonly isFirst: boolean
-    readonly isLast: boolean
+    readonly isLastPage: boolean
     readonly lastPage: number
 
-    readonly hasPrev: boolean
+    readonly hasPrevPage: boolean
     readonly prevPage: number
-    readonly hasNext: boolean
+    readonly hasNextPage: boolean
     readonly nextPage: number
   } = reactive({
     currentPage,
     perPageSize,
     totalSize,
-    currentPerPageSize: computed(() =>
-      state.isLast ? state.totalSize - (state.totalPageSize - 1) * state.perPageSize : state.perPageSize,
-    ),
+    currentPerPageSize: computed(() => state.currentEndSize - state.currentStartSize + 1),
     totalPageSize: computed(() => calcTotalPageSize(perPageSize.value, totalSize.value)),
-    pages: computed(() => createRange(state.totalPageSize)),
+    pageRange: computed(() => createRange(state.totalPageSize)),
 
+    currentStartSize: computed(() => state.prevPage * state.perPageSize + 1),
+    currentEndSize: computed(() => (state.isLastPage ? state.totalSize : state.currentPage * state.perPageSize)),
+
+    isFirstPage: computed(() => state.firstPage === state.currentPage),
     firstPage: 1,
-    isFirst: computed(() => state.currentPage === 1),
-    isLast: computed(() => state.lastPage === state.currentPage),
+    isLastPage: computed(() => state.lastPage === state.currentPage),
     lastPage: computed(() => state.totalPageSize),
 
-    hasPrev: computed(() => state.currentPage > 1),
+    hasPrevPage: computed(() => state.currentPage > 1),
     prevPage: computed(() => currentPage.value - 1),
-    hasNext: computed(() => state.lastPage > state.currentPage),
+    hasNextPage: computed(() => state.lastPage > state.currentPage),
     nextPage: computed(() => currentPage.value + 1),
   })
 
-  const goTo = (page: number) => {
-    state.currentPage = page
-  }
+  return toRefs(state)
+}
 
-  return {
-    ...toRefs(state),
-    goTo,
+export function validatePageNumber(name: string, number: unknown) {
+  if (__DEV__) {
+    if (Number.isInteger(number) === false) throw TypeError(`\`${name}\` must be an integer.`)
+
+    if (Number.isSafeInteger(number) === false) throw TypeError(`\`${name}\` must be a safe integer.`)
+
+    if ((number as number) <= 0) throw TypeError(`\`${name}\` must greater than 0.`)
   }
+}
+
+export function calcTotalPageSize(perPageSize: number, totalSize: number) {
+  return Math.ceil(totalSize / perPageSize)
+}
+
+// effects
+export function guaranteePageSizeInPageSizes(currentPage: Ref<number>, totalPageSize: Ref<number>) {
+  if (currentPage.value < 1) currentPage.value = 1
+  if (currentPage.value > totalPageSize.value) currentPage.value = totalPageSize.value
+  if (Number.isInteger(currentPage.value) === false) currentPage.value = 1
+}
+
+export function isValidPageSize(currentPage: Ref<number>, totalPageSize: Ref<number>) {
+  return Number.isInteger(currentPage.value) && currentPage.value >= 1 && currentPage.value <= totalPageSize.value
 }
