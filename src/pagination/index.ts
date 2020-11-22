@@ -13,7 +13,19 @@ export const isValidNumber = (n: unknown) => {
 
   return true
 }
-export const calcTotalPageSize = (perPageSize: number, totalSize: number) => Math.ceil(totalSize / perPageSize)
+export const calcTotalPageSize = (perPageSize: Ref<number>, totalSize: Ref<number>) => {
+  return Math.ceil(totalSize.value / perPageSize.value)
+}
+export const guaranteePageSizeInPageSizes = (currentPage: Ref<number>, totalPageSize: Ref<number>) => {
+  if (currentPage.value < 1) currentPage.value = 1
+  if (currentPage.value > totalPageSize.value) currentPage.value = totalPageSize.value
+  if (Object.is(currentPage.value, NaN)) currentPage.value = 1
+}
+export const isValidPageSize = (currentPage: Ref<number>, totalPageSize: Ref<number>) => {
+  return (
+    Object.is(currentPage.value, NaN) === false && currentPage.value >= 1 && currentPage.value <= totalPageSize.value
+  )
+}
 
 export interface UsePaginationParams {
   currentPage: Ref<number>
@@ -50,7 +62,7 @@ export const usePagination = ({ currentPage, perPageSize, totalSize }: UsePagina
     currentPerPageSize: computed(() =>
       state.isLast ? state.totalSize - (state.totalPageSize - 1) * state.perPageSize : state.perPageSize,
     ),
-    totalPageSize: computed(() => calcTotalPageSize(perPageSize.value, totalSize.value)),
+    totalPageSize: computed(() => calcTotalPageSize(perPageSize, totalSize)),
     pages: computed(() => createRange(state.totalPageSize)),
 
     firstPage: 1,
