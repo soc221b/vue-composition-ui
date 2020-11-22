@@ -5,6 +5,7 @@ import { terser } from 'rollup-plugin-terser'
 import resolve from '@rollup/plugin-node-resolve'
 import globals from 'rollup-plugin-node-globals'
 import vue from 'rollup-plugin-vue'
+import replace from '@rollup/plugin-replace'
 
 rm.sync(path.resolve('dist/**/*'))
 
@@ -30,7 +31,7 @@ formats.forEach(format => {
 
   configs.push({
     ...config,
-    plugins: [vue(), ts(), resolve(), globals()],
+    plugins: [vue(), ts(), resolve(), globals(), replace({ __DEV__: true })],
     output: {
       ...config.output,
       file: path.resolve(`dist/${packageName}.${format}.js`),
@@ -39,7 +40,7 @@ formats.forEach(format => {
 
   configs.push({
     ...config,
-    plugins: [vue(), ts(), resolve(), globals(), terser()],
+    plugins: [vue(), ts(), resolve(), globals(), replace({ __DEV__: false }), terser()],
     output: {
       ...config.output,
       file: path.resolve(`dist/${packageName}.${format}.prod.js`),
