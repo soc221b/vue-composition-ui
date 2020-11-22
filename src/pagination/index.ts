@@ -3,6 +3,7 @@ import { createRange } from '../util'
 
 import type { Ref } from 'vue'
 
+// utils
 export const isValidNumber = (n: unknown) => {
   if (n === undefined) return true
 
@@ -13,9 +14,11 @@ export const isValidNumber = (n: unknown) => {
 
   return true
 }
-export const calcTotalPageSize = (perPageSize: Ref<number>, totalSize: Ref<number>) => {
-  return Math.ceil(totalSize.value / perPageSize.value)
+export const calcTotalPageSize = (perPageSize: number, totalSize: number) => {
+  return Math.ceil(totalSize / perPageSize)
 }
+
+// effects
 export const guaranteePageSizeInPageSizes = (currentPage: Ref<number>, totalPageSize: Ref<number>) => {
   if (currentPage.value < 1) currentPage.value = 1
   if (currentPage.value > totalPageSize.value) currentPage.value = totalPageSize.value
@@ -62,7 +65,7 @@ export const usePagination = ({ currentPage, perPageSize, totalSize }: UsePagina
     currentPerPageSize: computed(() =>
       state.isLast ? state.totalSize - (state.totalPageSize - 1) * state.perPageSize : state.perPageSize,
     ),
-    totalPageSize: computed(() => calcTotalPageSize(perPageSize, totalSize)),
+    totalPageSize: computed(() => calcTotalPageSize(perPageSize.value, totalSize.value)),
     pages: computed(() => createRange(state.totalPageSize)),
 
     firstPage: 1,
