@@ -44,9 +44,9 @@ export const usePagination = ({ currentPage, perPageSize, totalSize }: UsePagina
     readonly hasNext: boolean
     readonly nextPage: number
   } = reactive({
-    currentPage: currentPage.value,
-    perPageSize: perPageSize.value,
-    totalSize: totalSize.value,
+    currentPage,
+    perPageSize,
+    totalSize,
     currentPerPageSize: computed(() =>
       state.isLast ? state.totalSize - (state.totalPageSize - 1) * state.perPageSize : state.perPageSize,
     ),
