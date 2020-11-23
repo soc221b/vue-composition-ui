@@ -1,16 +1,16 @@
 import { Ref } from 'vue'
 
-export interface UseTagsParams {
+export interface UseTagParams {
   tags: Ref<any[]>
   allowDuplicate: boolean
   isSame?(a: unknown, b: unknown): boolean
 }
 
-export const useTags = ({
+export const useTag = ({
   tags,
   allowDuplicate = false,
   isSame = (a: unknown, b: unknown) => a === b,
-}: UseTagsParams) => {
+}: UseTagParams) => {
   function isAlreadyExist(tag: unknown) {
     if (allowDuplicate) {
       return false

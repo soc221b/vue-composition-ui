@@ -1,4 +1,4 @@
 export const dummy: boolean = true
 
-export { useTags } from './tags'
+export { useTag } from './tag'
 export { usePagination } from './pagination'
