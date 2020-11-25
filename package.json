@@ -1,23 +1,23 @@
 {
-  "name": "vue-rlc",
+  "name": "vue-composition-ui-lib",
   "version": "0.0.1",
   "engines": {
     "node": ">=10"
   },
-  "description": "A Vue 3 renderless component library",
-  "main": "dist/vue-rlc.cjs.prod.js",
-  "module": "dist/vue-rlc.es.prod.js",
-  "unpkg": "dist/vue-rlc.iife.prod.js",
-  "jsdelivr": "dist/vue-rlc.iife.prod.js",
+  "description": "A Vue 3 composition UI library",
+  "main": "dist/vue-composition-ui.cjs.prod.js",
+  "module": "dist/vue-composition-ui.es.prod.js",
+  "unpkg": "dist/vue-composition-ui.iife.prod.js",
+  "jsdelivr": "dist/vue-composition-ui.iife.prod.js",
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iendeavor/vue-rlc.git"
+    "url": "git+https://github.com/iendeavor/vue-composition-ui.git"
   },
   "bugs": {
-    "url": "https://github.com/iendeavor/vue-rlc/issues"
+    "url": "https://github.com/iendeavor/vue-composition-ui/issues"
   },
-  "homepage": "https://iendeavor.github.io/vue-rlc",
+  "homepage": "https://iendeavor.github.io/vue-composition-ui",
   "author": "Ernest <iendeavor.github.io@gmail.com>",
   "license": "MIT",
   "files": [

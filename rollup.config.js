@@ -9,8 +9,8 @@ import replace from '@rollup/plugin-replace'
 
 rm.sync(path.resolve('dist/**/*'))
 
-const packageName = 'vue-rlc'
-const pascalCasePackageName = 'VueRlc'
+const packageName = 'vue-composition-ui'
+const pascalCasePackageName = 'VueCompositionUi'
 
 const input = 'src/index.ts'
 const formats = ['es', 'cjs', 'iife']

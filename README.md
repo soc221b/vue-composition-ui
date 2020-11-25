@@ -1,6 +1,12 @@
-# vue-rlc
+# vue-composition-ui
 
-A Vue 3 renderless component library
+A Vue 3 composition UI library
+
+# Installation
+
+```
+yarn add vue-composition-ui-lib
+```
 
 # Contributing
 
