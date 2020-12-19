@@ -42,7 +42,7 @@
 <script lang="ts">
 import { defineComponent, ref, computed, watchEffect } from 'vue'
 import { createRange } from '../../src/util'
-import { usePagination, guaranteePageSizeInPageSizes } from '../../src/pagination/index'
+import { usePagination, useGuaranteePageSize } from '../../src/pagination/index'
 
 export default defineComponent({
   name: 'example-1',
@@ -104,7 +104,7 @@ export default defineComponent({
       if ((currentPage.value as unknown) === '') {
         currentPage.value = 1
       }
-      guaranteePageSizeInPageSizes(currentPage, totalPageSize)
+      useGuaranteePageSize(currentPage, totalPageSize)
     })
 
     watchEffect(() => {

@@ -59,6 +59,12 @@ export function usePagination({ currentPage, perPageSize, totalSize }: UsePagina
   return toRefs(state)
 }
 
+export function useGuaranteePageSize(currentPage: Ref<number>, totalPageSize: Ref<number>) {
+  if (currentPage.value < 1) currentPage.value = 1
+  if (currentPage.value > totalPageSize.value) currentPage.value = totalPageSize.value
+  if (Number.isInteger(currentPage.value) === false) currentPage.value = 1
+}
+
 export function validatePageNumber(name: string, number: unknown) {
   if (Number.isInteger(number) === false) throw TypeError(`\`${name}\` must be an integer.`)
 
@@ -69,13 +75,6 @@ export function validatePageNumber(name: string, number: unknown) {
 
 export function calcTotalPageSize(perPageSize: number, totalSize: number) {
   return Math.ceil(totalSize / perPageSize)
-}
-
-// effects
-export function guaranteePageSizeInPageSizes(currentPage: Ref<number>, totalPageSize: Ref<number>) {
-  if (currentPage.value < 1) currentPage.value = 1
-  if (currentPage.value > totalPageSize.value) currentPage.value = totalPageSize.value
-  if (Number.isInteger(currentPage.value) === false) currentPage.value = 1
 }
 
 export function isValidPageSize(currentPage: Ref<number>, totalPageSize: Ref<number>) {
