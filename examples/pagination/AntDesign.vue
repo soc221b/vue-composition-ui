@@ -43,25 +43,16 @@ import { createRange } from '../../src/util'
 import { usePagination, useGuaranteePageSize } from '../../src/pagination/index'
 
 export default defineComponent({
-  name: 'example-1',
-
   setup() {
-    const perPageSizes = [10, 20, 30, 40]
-
     const {
       currentPage,
       perPageSize,
       totalPageSize,
       totalSize,
-      currentPerPageSize,
       currentStartSize,
       currentEndSize,
       hasPrevPage,
       hasNextPage,
-      isFirstPage,
-      isLastPage,
-      firstPage,
-      lastPage,
       prevPage,
       nextPage,
     } = usePagination({ currentPage: ref(1), perPageSize: ref(10), totalSize: ref(500) })
@@ -127,18 +118,12 @@ export default defineComponent({
       pageRange,
       hasPrevPage,
       hasNextPage,
-      isFirstPage,
-      isLastPage,
       goTo,
-      firstPage,
-      lastPage,
       prevPage,
       nextPage,
       totalPageSize,
 
-      perPageSizes,
       currentPage,
-      currentPerPageSize,
       perPageSize,
       currentStartSize,
       currentEndSize,

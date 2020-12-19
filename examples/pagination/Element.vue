@@ -28,8 +28,6 @@ import { defineComponent, ref, watchEffect } from 'vue'
 import { usePagination, useGuaranteePageSize } from '../../src/pagination/index'
 
 export default defineComponent({
-  name: 'example-1',
-
   setup() {
     const {
       pageRange,
@@ -37,15 +35,8 @@ export default defineComponent({
       perPageSize,
       totalPageSize,
       totalSize,
-      currentPerPageSize,
-      currentStartSize,
-      currentEndSize,
       hasPrevPage,
       hasNextPage,
-      isFirstPage,
-      isLastPage,
-      firstPage,
-      lastPage,
       prevPage,
       nextPage,
     } = usePagination({ currentPage: ref(1), perPageSize: ref(100), totalSize: ref(400) })
@@ -87,20 +78,13 @@ export default defineComponent({
 
       hasPrevPage,
       hasNextPage,
-      isFirstPage,
-      isLastPage,
       goTo,
-      firstPage,
-      lastPage,
       prevPage,
       nextPage,
       totalPageSize,
 
       currentPage,
-      currentPerPageSize,
       perPageSize,
-      currentStartSize,
-      currentEndSize,
 
       totalSize,
     }
