@@ -1,9 +1,10 @@
 <template>
-  <h1>Element</h1>
+  <h2>pagination</h2>
+  <h3>element</h3>
   <element-example></element-example>
-  <h1>Vuetify</h1>
+  <h3>vuetify</h3>
   <vuetify-example></vuetify-example>
-  <h1>Ant design</h1>
+  <h3>ant design</h3>
   <ant-design-example></ant-design-example>
 </template>
 

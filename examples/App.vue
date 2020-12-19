@@ -1,4 +1,5 @@
 <template>
+  <h1>vue-composition-ui</h1>
   <pagination></pagination>
 </template>
 
