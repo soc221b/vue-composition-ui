@@ -60,13 +60,11 @@ export function usePagination({ currentPage, perPageSize, totalSize }: UsePagina
 }
 
 export function validatePageNumber(name: string, number: unknown) {
-  if (__DEV__) {
-    if (Number.isInteger(number) === false) throw TypeError(`\`${name}\` must be an integer.`)
+  if (Number.isInteger(number) === false) throw TypeError(`\`${name}\` must be an integer.`)
 
-    if (Number.isSafeInteger(number) === false) throw TypeError(`\`${name}\` must be a safe integer.`)
+  if (Number.isSafeInteger(number) === false) throw RangeError(`\`${name}\` must be a safe integer.`)
 
-    if ((number as number) <= 0) throw TypeError(`\`${name}\` must greater than 0.`)
-  }
+  if ((number as number) <= 0) throw RangeError(`\`${name}\` must greater than 0.`)
 }
 
 export function calcTotalPageSize(perPageSize: number, totalSize: number) {
