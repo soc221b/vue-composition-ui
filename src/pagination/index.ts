@@ -1,7 +1,7 @@
 import { reactive, computed, toRefs } from 'vue'
 import { createRange } from '../util'
 
-import type { Ref } from 'vue'
+import type { Ref, ToRefs } from 'vue'
 
 export interface UsePaginationParams {
   currentPage: Ref<number>
@@ -9,32 +9,38 @@ export interface UsePaginationParams {
   totalSize: Ref<number>
 }
 
-export function usePagination({ currentPage, perPageSize, totalSize }: UsePaginationParams) {
+interface UsePaginationReturnType {
+  currentPage: number
+  perPageSize: number
+  totalSize: number
+  readonly currentPerPageSize: number
+  readonly totalPageSize: number
+  readonly pageRange: number[]
+
+  readonly currentStartSize: number
+  readonly currentEndSize: number
+
+  readonly isFirstPage: boolean
+  readonly firstPage: number
+  readonly isLastPage: boolean
+  readonly lastPage: number
+
+  readonly hasPrevPage: boolean
+  readonly prevPage: number
+  readonly hasNextPage: boolean
+  readonly nextPage: number
+}
+
+export function usePagination({
+  currentPage,
+  perPageSize,
+  totalSize,
+}: UsePaginationParams): ToRefs<UsePaginationReturnType> {
   validatePageNumber('currentPage', currentPage.value)
   validatePageNumber('perPageSize', perPageSize.value)
   validatePageNumber('totalSize', totalSize.value)
 
-  const state: {
-    currentPage: number
-    perPageSize: number
-    totalSize: number
-    readonly currentPerPageSize: number
-    readonly totalPageSize: number
-    readonly pageRange: number[]
-
-    readonly currentStartSize: number
-    readonly currentEndSize: number
-
-    readonly isFirstPage: boolean
-    readonly firstPage: number
-    readonly isLastPage: boolean
-    readonly lastPage: number
-
-    readonly hasPrevPage: boolean
-    readonly prevPage: number
-    readonly hasNextPage: boolean
-    readonly nextPage: number
-  } = reactive({
+  const state: UsePaginationReturnType = reactive({
     currentPage,
     perPageSize,
     totalSize,
