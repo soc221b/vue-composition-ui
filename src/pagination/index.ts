@@ -3,13 +3,19 @@ import { createRange } from '../util'
 
 import type { Ref, ToRefs } from 'vue'
 
+/**
+ * @public
+ */
 export interface UsePaginationParams {
   currentPage: Ref<number>
   perPageSize: Ref<number>
   totalSize: Ref<number>
 }
 
-interface UsePaginationReturnType {
+/**
+ * @public
+ */
+export interface UsePaginationReturnType {
   currentPage: number
   perPageSize: number
   totalSize: number
@@ -31,6 +37,9 @@ interface UsePaginationReturnType {
   readonly nextPage: number
 }
 
+/**
+ * @public
+ */
 export function usePagination({
   currentPage,
   perPageSize,

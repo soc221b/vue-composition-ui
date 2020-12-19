@@ -1,11 +1,17 @@
 import { Ref } from 'vue'
 
+/**
+ * @alpha
+ */
 export interface UseTagsParams {
   tags: Ref<any[]>
   allowDuplicate: boolean
   isSame?(a: unknown, b: unknown): boolean
 }
 
+/**
+ * @alpha
+ */
 export const useTags = ({
   tags,
   allowDuplicate = false,
