@@ -5,19 +5,19 @@
     "node": ">=10"
   },
   "description": "A Vue 3 composition UI library",
-  "main": "dist/vue-composition-ui.cjs.prod.js",
-  "module": "dist/vue-composition-ui.es.prod.js",
-  "unpkg": "dist/vue-composition-ui.iife.prod.js",
-  "jsdelivr": "dist/vue-composition-ui.iife.prod.js",
+  "main": "dist/vue-composition-ui-lib.cjs.prod.js",
+  "module": "dist/vue-composition-ui-lib.es.prod.js",
+  "unpkg": "dist/vue-composition-ui-lib.iife.prod.js",
+  "jsdelivr": "dist/vue-composition-ui-lib.iife.prod.js",
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iendeavor/vue-composition-ui.git"
+    "url": "git+https://github.com/iendeavor/vue-composition-ui-lib.git"
   },
   "bugs": {
-    "url": "https://github.com/iendeavor/vue-composition-ui/issues"
+    "url": "https://github.com/iendeavor/vue-composition-ui-lib/issues"
   },
-  "homepage": "https://iendeavor.github.io/vue-composition-ui",
+  "homepage": "https://iendeavor.github.io/vue-composition-ui-lib",
   "author": "Ernest <iendeavor.github.io@gmail.com>",
   "license": "MIT",
   "files": [

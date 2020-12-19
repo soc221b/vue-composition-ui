@@ -1,4 +1,4 @@
-# vue-composition-ui
+# vue-composition-ui-lib
 
 A Vue 3 composition UI library
 
