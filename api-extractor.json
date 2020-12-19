@@ -5,7 +5,7 @@
 
   "apiReport": {
     "enabled": true,
-    "reportFolder": "<projectFolder>/api-extractor/"
+    "reportFolder": "<projectFolder>/api/"
   },
 
   "docModel": {
