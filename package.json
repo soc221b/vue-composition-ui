@@ -5,10 +5,10 @@
     "node": ">=10"
   },
   "description": "A Vue 3 composition UI library",
-  "main": "dist/vue-composition-ui-lib.cjs.prod.js",
-  "module": "dist/vue-composition-ui-lib.es.prod.js",
-  "unpkg": "dist/vue-composition-ui-lib.iife.prod.js",
-  "jsdelivr": "dist/vue-composition-ui-lib.iife.prod.js",
+  "main": "dist/index.cjs.prod.js",
+  "module": "dist/index.es.prod.js",
+  "unpkg": "dist/index.iife.prod.js",
+  "jsdelivr": "dist/index.iife.prod.js",
   "types": "dist/src/index.d.ts",
   "repository": {
     "type": "git",

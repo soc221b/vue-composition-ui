@@ -9,43 +9,98 @@ import replace from '@rollup/plugin-replace'
 
 rm.sync(path.resolve('dist/**/*'))
 
-const packageName = 'vue-composition-ui-lib'
-const pascalCasePackageName = 'VueCompositionUi'
+const pascalCasePackageName = 'VueCompositionUiLib'
 
 const input = 'src/index.ts'
-const formats = ['es', 'cjs', 'iife']
 
-const configs = []
-formats.forEach(format => {
-  const config = {
+const configs = [
+  {
     input,
-    external: ['vue'],
     output: {
       globals: {
         vue: 'Vue',
       },
-      format,
+      format: 'iife',
       name: pascalCasePackageName,
+      file: path.resolve(`dist/index.global.js`),
     },
-  }
-
-  configs.push({
-    ...config,
     plugins: [vue(), ts(), resolve(), globals(), replace({ __DEV__: true })],
+  },
+  {
+    input,
     output: {
-      ...config.output,
-      file: path.resolve(`dist/${packageName}.${format}.js`),
+      globals: {
+        vue: 'Vue',
+      },
+      format: 'iife',
+      name: pascalCasePackageName,
+      file: path.resolve(`dist/index.global.prod.js`),
     },
-  })
-
-  configs.push({
-    ...config,
     plugins: [vue(), ts(), resolve(), globals(), replace({ __DEV__: false }), terser()],
+  },
+  {
+    input,
     output: {
-      ...config.output,
-      file: path.resolve(`dist/${packageName}.${format}.prod.js`),
+      globals: {
+        vue: 'Vue',
+      },
+      format: 'cjs',
+      name: pascalCasePackageName,
+      file: path.resolve(`dist/index.cjs.js`),
     },
-  })
-})
+    external: ['vue'],
+    plugins: [vue(), ts(), resolve(), globals(), replace({ __DEV__: true })],
+  },
+  {
+    input,
+    output: {
+      globals: {
+        vue: 'Vue',
+      },
+      format: 'cjs',
+      name: pascalCasePackageName,
+      file: path.resolve(`dist/index.cjs.prod.js`),
+    },
+    external: ['vue'],
+    plugins: [vue(), ts(), resolve(), globals(), replace({ __DEV__: false }), terser()],
+  },
+  {
+    input,
+    output: {
+      globals: {
+        vue: 'Vue',
+      },
+      format: 'es',
+      name: pascalCasePackageName,
+      file: path.resolve(`dist/index.esm-browser.js`),
+    },
+    plugins: [vue(), ts(), resolve(), globals(), replace({ __DEV__: true })],
+  },
+  {
+    input,
+    output: {
+      globals: {
+        vue: 'Vue',
+      },
+      format: 'es',
+      name: pascalCasePackageName,
+      file: path.resolve(`dist/index.esm-browser.prod.js`),
+    },
+    plugins: [vue(), ts(), resolve(), globals(), replace({ __DEV__: false }), terser()],
+  },
+  {
+    input,
+    output: {
+      globals: {
+        vue: 'Vue',
+      },
+      format: 'es',
+      name: pascalCasePackageName,
+      file: path.resolve(`dist/index.esm-bundler.js`),
+    },
+    external: ['vue'],
+    plugins: [vue(), ts(), resolve(), globals(), replace({ __DEV__: `(process.env.NODE_ENV !== 'production')` })],
+  },
+]
 
 export default configs
