@@ -25,7 +25,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, watchEffect } from 'vue'
-import { usePagination, useGuaranteePageSize } from '../../src/pagination/index'
+import { usePagination, useGuaranteePageSize } from '../../packages/pagination/index'
 
 export default defineComponent({
   setup() {

@@ -1,5 +1,5 @@
-export { useTags } from './tags'
-export { usePagination } from './pagination'
+export { useTags } from '../packages/tags'
+export { usePagination } from '../packages/pagination'
 
-export type { UsePaginationParams, UsePaginationReturnType } from './pagination'
-export type { UseTagsParams } from './tags'
+export type { UsePaginationParams, UsePaginationReturnType } from '../packages/pagination'
+export type { UseTagsParams } from '../packages/tags'

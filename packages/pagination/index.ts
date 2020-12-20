@@ -1,5 +1,5 @@
 import { reactive, computed, toRefs } from 'vue'
-import { createRange } from '../util'
+import { createRange } from '../../src/util'
 
 import type { Ref, ToRefs } from 'vue'
 

@@ -1,6 +1,6 @@
 {
   "extends": "../../api-extractor-base.json",
-  "mainEntryPointFilePath": "<projectFolder>/dist/tags/index.d.ts",
+  "mainEntryPointFilePath": "<projectFolder>/dist/packages/tags/index.d.ts",
   "apiReport": {
     "reportFileName": "tags.md"
   }

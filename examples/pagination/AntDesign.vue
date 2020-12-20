@@ -40,7 +40,7 @@
 <script lang="ts">
 import { defineComponent, ref, computed, watchEffect } from 'vue'
 import { createRange } from '../../src/util'
-import { usePagination, useGuaranteePageSize } from '../../src/pagination/index'
+import { usePagination, useGuaranteePageSize } from '../../packages/pagination'
 
 export default defineComponent({
   setup() {
