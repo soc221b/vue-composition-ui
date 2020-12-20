@@ -3,3 +3,5 @@ node_modules
 CHANGELOG.md
 api
 temp
+docs
+tsdoc-metadata.json

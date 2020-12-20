@@ -26,6 +26,7 @@
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
+    "@microsoft/api-documenter": "^7.12.1",
     "@microsoft/api-extractor": "^7.12.1",
     "@rollup/plugin-node-resolve": "^11.0.1",
     "@rollup/plugin-replace": "^2.3.4",
@@ -51,11 +52,12 @@
   },
   "scripts": {
     "build": "rollup -c rollup.config.js",
+    "docs": "api-documenter markdown -i temp -o docs",
     "release": "standard-version",
     "serve": "vite",
     "test": "yarn test:unit && yarn test:api",
     "test:unit": "jest",
-    "test:api": "api-extractor run --verbose",
+    "test:api": "node scripts/api-extractor.js --verbose",
     "lint": "prettier --check ."
   }
 }

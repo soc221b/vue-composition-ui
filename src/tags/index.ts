@@ -12,11 +12,7 @@ export interface UseTagsParams {
 /**
  * @alpha
  */
-export const useTags = ({
-  tags,
-  allowDuplicate = false,
-  isSame = (a: unknown, b: unknown) => a === b,
-}: UseTagsParams) => {
+export function useTags({ tags, allowDuplicate = false, isSame = (a: unknown, b: unknown) => a === b }: UseTagsParams) {
   function isAlreadyExist(tag: unknown) {
     if (allowDuplicate) {
       return false

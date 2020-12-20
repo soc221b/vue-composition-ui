@@ -13,11 +13,11 @@
   },
 
   "dtsRollup": {
-    "enabled": true
+    "enabled": false
   },
 
   "tsdocMetadata": {
-    "enabled": false
+    "enabled": true
   },
 
   "messages": {
