@@ -6,9 +6,9 @@
   },
   "description": "A Vue 3 composition UI library",
   "main": "dist/index.cjs.prod.js",
-  "module": "dist/index.es.prod.js",
-  "unpkg": "dist/index.iife.prod.js",
-  "jsdelivr": "dist/index.iife.prod.js",
+  "module": "dist/index.esm-bundler.js",
+  "unpkg": "dist/index.global.prod.js",
+  "jsdelivr": "dist/index.global.prod.js",
   "types": "dist/src/index.d.ts",
   "repository": {
     "type": "git",
