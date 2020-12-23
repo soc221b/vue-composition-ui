@@ -1,4 +1,13 @@
 {
-  "private": true,
-  "name": "pagination"
+  "version": "0.0.1",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "name": "@vue-composition-ui/pagination",
+  "main": "dist/pagination.cjs.prod.js",
+  "module": "dist/pagination.esm-bundler.js",
+  "unpkg": "dist/pagination.global.prod.js",
+  "jsdelivr": "dist/pagination.global.prod.js",
+  "types": "dist/pagination.d.ts"
 }

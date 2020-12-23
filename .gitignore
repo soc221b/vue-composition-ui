@@ -105,3 +105,4 @@ dist
 
 temp
 tsdoc-metadata.json
+.DS_Store

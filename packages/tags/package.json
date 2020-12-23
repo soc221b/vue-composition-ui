@@ -1,4 +1,13 @@
 {
-  "private": true,
-  "name": "tags"
+  "version": "0.0.1",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "name": "@vue-composition-ui/tags",
+  "main": "dist/tags.cjs.prod.js",
+  "module": "dist/tags.esm-bundler.js",
+  "unpkg": "dist/tags.global.prod.js",
+  "jsdelivr": "dist/tags.global.prod.js",
+  "types": "dist/tags.d.ts"
 }

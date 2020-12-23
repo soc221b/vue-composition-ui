@@ -1,5 +1,4 @@
 import { reactive, computed, toRefs } from 'vue'
-import { createRange } from '../../src/util'
 
 import type { Ref, ToRefs } from 'vue'
 
@@ -106,4 +105,13 @@ export function calcTotalPageSize(perPageSize: number, totalSize: number) {
  */
 export function isValidPageSize(currentPage: Ref<number>, totalPageSize: Ref<number>) {
   return Number.isInteger(currentPage.value) && currentPage.value >= 1 && currentPage.value <= totalPageSize.value
+}
+
+/**
+ * @public
+ */
+export function createRange(last: number, first = 1) {
+  return Array(last - first + 1)
+    .fill(null)
+    .map((_, index) => index + first)
 }

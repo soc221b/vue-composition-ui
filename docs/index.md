@@ -8,6 +8,6 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [pagination](./pagination.md) |  |
-|  [tags](./tags.md) |  |
+|  [@vue-composition-ui/pagination](./pagination.md) |  |
+|  [@vue-composition-ui/tags](./tags.md) |  |
 

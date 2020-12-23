@@ -1,11 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const childProcess = require('child_process')
-
-const packageDirs = fs
-  .readdirSync(path.join(__dirname, '..', 'packages'))
-  .map(relPath => path.join(__dirname, '..', 'packages', relPath))
-  .filter(absPath => fs.lstatSync(absPath).isDirectory())
+const packageDirs = require('./utils').packageDirs
 
 packageDirs.forEach(packageDir => {
   childProcess.execSync(

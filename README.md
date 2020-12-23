@@ -4,8 +4,37 @@ A Vue 3 composition UI library
 
 # Installation
 
+via npm
+
 ```
-yarn add vue-composition-ui
+yarn add @vue-composition-ui/pagination
+```
+
+via cdn
+
+```html
+<script src="https://unpkg.com/@vue-composition-ui/pagination@latest"></script>
+```
+
+# Basic Usage
+
+esm:
+
+```ts
+import { usePagination, useGuaranteePageSize } from '@vue-composition-ui/pagination'
+```
+
+commonjs:
+
+```ts
+const { usePagination, useGuaranteePageSize } = '@vue-composition-ui/pagination'
+```
+
+browser:
+
+```ts
+// 'VueCompositionUi' + PackageNameWithPascalCase
+const { usePagination, useGuaranteePageSize } = window.VueCompositionUiPagination
 ```
 
 # Contributing
