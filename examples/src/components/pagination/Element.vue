@@ -8,7 +8,7 @@
       </option>
     </select>
 
-    <button class="btn-prev" :disabled="hasPrevPage === false" @click="goTo(prevPage)">{{ '<' }}</button>
+    <button class="btn-prev" :disabled="hasPrevPage === false" @click="goTo(prevPage)">&lt;</button>
     <ul class="el-pager">
       <template v-for="page of pageRange" :key="page">
         <li class="number" :class="{ active: currentPage === page }" @click="goTo(page)">
@@ -16,7 +16,7 @@
         </li>
       </template>
     </ul>
-    <button class="btn-next" :disabled="hasNextPage === false" @click="goTo(nextPage)">{{ '>' }}</button>
+    <button class="btn-next" :disabled="hasNextPage === false" @click="goTo(nextPage)">></button>
 
     <span>Go to</span>
     <input v-model.lazy="currentPage" />
@@ -25,7 +25,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, watchEffect } from 'vue'
-import { usePagination, useGuaranteePageSize } from '../../packages/pagination/index'
+import { usePagination, useGuaranteePageSize } from '@vue-composition-ui/pagination'
 
 export default defineComponent({
   setup() {

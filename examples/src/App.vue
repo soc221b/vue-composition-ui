@@ -5,7 +5,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Pagination from './pagination/Index.vue'
+import Pagination from './components/pagination/Index.vue'
 
 export default defineComponent({
   components: {
