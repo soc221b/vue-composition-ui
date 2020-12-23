@@ -1,11 +1,11 @@
-# vue-composition-ui-lib
+# vue-composition-ui
 
 A Vue 3 composition UI library
 
 # Installation
 
 ```
-yarn add vue-composition-ui-lib
+yarn add vue-composition-ui
 ```
 
 # Contributing

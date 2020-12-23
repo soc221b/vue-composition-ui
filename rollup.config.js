@@ -9,7 +9,7 @@ import replace from '@rollup/plugin-replace'
 
 rm.sync(path.resolve('dist/**/*'))
 
-const pascalCasePackageName = 'VueCompositionUiLib'
+const pascalCasePackageName = 'VueCompositionUi'
 
 const input = 'src/index.ts'
 
