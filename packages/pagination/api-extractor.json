@@ -1,6 +1,6 @@
 {
   "extends": "../../api-extractor-base.json",
-  "mainEntryPointFilePath": "<projectFolder>/packages/<unscopedPackageName>/dist/<unscopedPackageName>.d.ts",
+  "mainEntryPointFilePath": "<projectFolder>/packages/<unscopedPackageName>/dist/packages/<unscopedPackageName>/src/index.d.ts",
   "apiReport": {
     "reportFileName": "pagination.md"
   }

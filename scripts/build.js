@@ -1,39 +1,35 @@
 const execa = require('execa')
 const path = require('path')
-const rm = require('rimraf')
-const fs = require('fs')
-const { packageDirs, packageDirNames } = require('./utils')
+const fs = require('fs-extra')
+const { packageDirInfos } = require('./utils')
+const { Extractor } = require('@microsoft/api-extractor')
 
 ;(async () => {
-  if (process.env.RELEASE !== false) {
-    rm.sync(path.resolve(__dirname, '..', 'node_modules', '.cache'))
-  }
-  packageDirs.map(packageDir => rm.sync(path.resolve(packageDir, 'dist/**/*')))
+  fs.rmdir(path.resolve(__dirname, '..', 'node_modules', '.cache'), { recursive: true })
 
-  const builds = packageDirNames.map(packageDirName => [
-    'rollup',
-    ['-c', '--environment', [`TARGET:${packageDirName}`].join(',')],
-    { stdio: 'inherit' },
-  ])
+  await Promise.allSettled(
+    packageDirInfos.map(async ([basename, absPath]) => {
+      fs.rmdir(path.resolve(absPath, 'dist'), { recursive: true })
 
-  await Promise.allSettled(builds.map(build => execa(...build)))
+      await execa('rollup', ['-c', '--environment', [`TARGET:${basename}`].join(',')], { stdio: 'inherit' })
 
-  // TODO: just generate relative types instead of move and delete redundant types
-  packageDirNames.forEach(packageDirName => {
-    fs.renameSync(
-      path.resolve(
-        __dirname,
-        '..',
-        'packages',
-        packageDirName,
-        'dist',
-        'packages',
-        packageDirName,
-        'src',
-        'index.d.ts',
-      ),
-      path.resolve(__dirname, '..', 'packages', packageDirName, 'dist', `${packageDirName}.d.ts`),
-    )
-  })
-  packageDirs.forEach(packageDir => rm.sync(path.resolve(packageDir, 'dist', 'packages')))
+      // rollup .d.ts
+      const extractorResult = Extractor.loadConfigAndInvoke(path.resolve(absPath, 'api-extractor.json'), {
+        localBuild: process.argv.indexOf('-l') !== -1 || process.argv.indexOf('--local') !== -1,
+        showVerboseMessages: true,
+      })
+      if (extractorResult.succeeded) {
+        await fs.copy(
+          path.resolve(__dirname, '..', 'dist', `${basename}.d.ts`),
+          path.resolve(absPath, 'dist', `${basename}.d.ts`),
+        )
+        await fs.rmdir(path.resolve(absPath, 'dist', 'packages'), { recursive: true })
+      } else {
+        console.error(
+          `API Extractor completed with ${extractorResult.errorCount} errors` +
+            ` and ${extractorResult.warningCount} warnings`,
+        )
+      }
+    }),
+  )
 })()

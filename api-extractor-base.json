@@ -13,7 +13,7 @@
   },
 
   "dtsRollup": {
-    "enabled": false
+    "enabled": true
   },
 
   "tsdocMetadata": {
