@@ -1,0 +1,22 @@
+{
+  "version": "0.0.1",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "name": "@vue-composition-ui/vue-composition-ui",
+  "main": "dist/vue-composition-ui.cjs.prod.js",
+  "module": "dist/vue-composition-ui.esm-bundler.js",
+  "unpkg": "dist/vue-composition-ui.global.prod.js",
+  "jsdelivr": "dist/vue-composition-ui.global.prod.js",
+  "types": "dist/vue-composition-ui.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/js-cosmos/vue-composition-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/js-cosmos/vue-composition-ui/issues"
+  },
+  "homepage": "https://github.com/js-cosmos/vue-composition-ui",
+  "author": "Ernest <iendeavor.github.io@gmail.com>"
+}
