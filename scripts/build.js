@@ -29,6 +29,7 @@ const { Extractor } = require('@microsoft/api-extractor')
           `API Extractor completed with ${extractorResult.errorCount} errors` +
             ` and ${extractorResult.warningCount} warnings`,
         )
+        process.exit(1)
       }
     }),
   ).catch(error => {
