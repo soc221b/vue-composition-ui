@@ -7,7 +7,7 @@ const { Extractor } = require('@microsoft/api-extractor')
 ;(async () => {
   fs.rmdir(path.resolve(__dirname, '..', 'node_modules', '.cache'), { recursive: true })
 
-  await Promise.allSettled(
+  await Promise.all(
     packageDirInfos.map(async ([basename, absPath]) => {
       fs.rmdir(path.resolve(absPath, 'dist'), { recursive: true })
 
@@ -31,5 +31,8 @@ const { Extractor } = require('@microsoft/api-extractor')
         )
       }
     }),
-  )
+  ).catch(error => {
+    console.log(error)
+    process.exit(1)
+  })
 })()
