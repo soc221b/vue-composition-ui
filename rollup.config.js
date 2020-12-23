@@ -55,7 +55,7 @@ function createConfig({ format, mode, outputConfig }) {
       globals: {
         vue: 'Vue',
       },
-      name: isGlobal ? 'VueCompositionUi' + name.charAt(0).toLocaleUpperCase() + name.slice(1) : undefined,
+      name: isGlobal ? 'VueCompositionUi' + toPascalCase(name) : undefined,
       file: isDev ? outputConfig.file : outputConfig.file.replace(/\.js$/, '.prod.js'),
     },
     plugins: [
@@ -86,5 +86,12 @@ const configs = finalFormats
     ),
   )
   .flat()
+
+function toPascalCase(string) {
+  return string
+    .split('-')
+    .map(part => part.charAt(0).toUpperCase() + part.slice(1))
+    .join('')
+}
 
 export default configs
