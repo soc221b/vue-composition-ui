@@ -59,7 +59,6 @@ header {
 
 #links > a {
   display: block;
-  text-decoration: none;
   color: black !important;
 }
 

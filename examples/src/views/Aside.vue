@@ -44,6 +44,5 @@ ul > li:not(:first-child) {
 
 ul > li a {
   color: black !important;
-  text-decoration: none;
 }
 </style>

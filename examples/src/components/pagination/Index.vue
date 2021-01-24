@@ -1,13 +1,31 @@
 <template>
-  <h2>pagination</h2>
+  <h2>Pagination</h2>
 
-  <h3>element</h3>
+  <h3>
+    <a
+      href="https://github.com/js-cosmos/vue-composition-ui/blob/HEAD/examples/src/components/pagination/Element.vue"
+      target="_blank"
+      >Element</a
+    >
+  </h3>
   <element-example></element-example>
 
-  <h3>vuetify</h3>
+  <h3>
+    <a
+      href="https://github.com/js-cosmos/vue-composition-ui/blob/HEAD/examples/src/components/pagination/Vuetify.vue"
+      target="_blank"
+      >Vuetify</a
+    >
+  </h3>
   <vuetify-example></vuetify-example>
 
-  <h3>ant design</h3>
+  <h3>
+    <a
+      href="https://github.com/js-cosmos/vue-composition-ui/blob/HEAD/examples/src/components/pagination/AntDesign.vue"
+      target="_blank"
+      >Ant design</a
+    >
+  </h3>
   <ant-design-example></ant-design-example>
 </template>
 

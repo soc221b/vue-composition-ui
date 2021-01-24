@@ -1,10 +1,22 @@
 <template>
-  <h2 id="tag">tag</h2>
+  <h2>Tags</h2>
 
-  <h3>element</h3>
+  <h3>
+    <a
+      href="https://github.com/js-cosmos/vue-composition-ui/blob/HEAD/examples/src/components/tags/element/Index.vue"
+      target="_blank"
+      >Element</a
+    >
+  </h3>
   <element-example></element-example>
 
-  <h3>ant design</h3>
+  <h3>
+    <a
+      href="https://github.com/js-cosmos/vue-composition-ui/blob/HEAD/examples/src/components/tags/AntDesign.vue"
+      target="_blank"
+      >Ant design</a
+    >
+  </h3>
   <ant-design-example></ant-design-example>
 </template>
 
