@@ -19,6 +19,11 @@ export default defineComponent({
   setup() {
     const links = [
       {
+        label: 'API reference',
+        href: 'https://js-cosmos.github.io/vue-composition-ui/',
+        target: '_blank',
+      },
+      {
         label: 'GitHub',
         href: 'https://github.com/js-cosmos/vue-composition-ui',
         target: '_blank',
