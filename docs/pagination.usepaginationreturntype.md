@@ -17,7 +17,7 @@ export interface UsePaginationReturnType
 |  --- | --- | --- |
 |  [currentEndSize](./pagination.usepaginationreturntype.currentendsize.md) | number |  |
 |  [currentPage](./pagination.usepaginationreturntype.currentpage.md) | number |  |
-|  [currentPerPageSize](./pagination.usepaginationreturntype.currentperpagesize.md) | number |  |
+|  [currentSize](./pagination.usepaginationreturntype.currentsize.md) | number |  |
 |  [currentStartSize](./pagination.usepaginationreturntype.currentstartsize.md) | number |  |
 |  [firstPage](./pagination.usepaginationreturntype.firstpage.md) | number |  |
 |  [hasNextPage](./pagination.usepaginationreturntype.hasnextpage.md) | boolean |  |
@@ -29,6 +29,6 @@ export interface UsePaginationReturnType
 |  [pageRange](./pagination.usepaginationreturntype.pagerange.md) | number\[\] |  |
 |  [perPageSize](./pagination.usepaginationreturntype.perpagesize.md) | number |  |
 |  [prevPage](./pagination.usepaginationreturntype.prevpage.md) | number |  |
-|  [totalPageSize](./pagination.usepaginationreturntype.totalpagesize.md) | number |  |
+|  [totalPage](./pagination.usepaginationreturntype.totalpage.md) | number |  |
 |  [totalSize](./pagination.usepaginationreturntype.totalsize.md) | number |  |
 

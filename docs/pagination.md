@@ -10,8 +10,8 @@
 |  --- | --- |
 |  [calcTotalPageSize(perPageSize, totalSize)](./pagination.calctotalpagesize.md) |  |
 |  [createRange(last, first)](./pagination.createrange.md) |  |
-|  [isValidPageSize(currentPage, totalPageSize)](./pagination.isvalidpagesize.md) |  |
-|  [useGuaranteePageSize(currentPage, totalPageSize)](./pagination.useguaranteepagesize.md) |  |
+|  [isValidPageSize(currentPage, totalPage)](./pagination.isvalidpagesize.md) |  |
+|  [useGuaranteePageSize(currentPage, totalPage)](./pagination.useguaranteepagesize.md) |  |
 |  [usePagination({ currentPage, perPageSize, totalSize, })](./pagination.usepagination.md) |  |
 |  [validatePageNumber(name, number)](./pagination.validatepagenumber.md) |  |
 

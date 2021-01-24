@@ -14,10 +14,10 @@ export function calcTotalPageSize(perPageSize: number, totalSize: number): numbe
 export function createRange(last: number, first?: number): number[];
 
 // @public (undocumented)
-export function isValidPageSize(currentPage: Ref<number>, totalPageSize: Ref<number>): boolean;
+export function isValidPageSize(currentPage: Ref<number>, totalPage: Ref<number>): boolean;
 
 // @public (undocumented)
-export function useGuaranteePageSize(currentPage: Ref<number>, totalPageSize: Ref<number>): void;
+export function useGuaranteePageSize(currentPage: Ref<number>, totalPage: Ref<number>): void;
 
 // @public (undocumented)
 export function usePagination({ currentPage, perPageSize, totalSize, }: UsePaginationParams): ToRefs<UsePaginationReturnType>;
@@ -39,7 +39,7 @@ export interface UsePaginationReturnType {
     // (undocumented)
     currentPage: number;
     // (undocumented)
-    readonly currentPerPageSize: number;
+    readonly currentSize: number;
     // (undocumented)
     readonly currentStartSize: number;
     // (undocumented)
@@ -63,7 +63,7 @@ export interface UsePaginationReturnType {
     // (undocumented)
     readonly prevPage: number;
     // (undocumented)
-    readonly totalPageSize: number;
+    readonly totalPage: number;
     // (undocumented)
     totalSize: number;
 }

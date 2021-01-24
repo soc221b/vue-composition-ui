@@ -10,4 +10,5 @@
 |  --- | --- |
 |  [@vue-composition-ui/pagination](./pagination.md) |  |
 |  [@vue-composition-ui/tags](./tags.md) |  |
+|  [@vue-composition-ui/vue-composition-ui](./vue-composition-ui.md) |  |
 

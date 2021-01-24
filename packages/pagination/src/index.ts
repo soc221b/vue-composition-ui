@@ -18,8 +18,8 @@ export interface UsePaginationReturnType {
   currentPage: number
   perPageSize: number
   totalSize: number
-  readonly currentPerPageSize: number
-  readonly totalPageSize: number
+  readonly currentSize: number
+  readonly totalPage: number
   readonly pageRange: number[]
 
   readonly currentStartSize: number
@@ -52,9 +52,9 @@ export function usePagination({
     currentPage,
     perPageSize,
     totalSize,
-    currentPerPageSize: computed(() => state.currentEndSize - state.currentStartSize + 1),
-    totalPageSize: computed(() => calcTotalPageSize(perPageSize.value, totalSize.value)),
-    pageRange: computed(() => createRange(state.totalPageSize)),
+    currentSize: computed(() => state.currentEndSize - state.currentStartSize + 1),
+    totalPage: computed(() => calcTotalPageSize(perPageSize.value, totalSize.value)),
+    pageRange: computed(() => createRange(state.totalPage)),
 
     currentStartSize: computed(() => state.prevPage * state.perPageSize + 1),
     currentEndSize: computed(() => (state.isLastPage ? state.totalSize : state.currentPage * state.perPageSize)),
@@ -62,7 +62,7 @@ export function usePagination({
     isFirstPage: computed(() => state.firstPage === state.currentPage),
     firstPage: 1,
     isLastPage: computed(() => state.lastPage === state.currentPage),
-    lastPage: computed(() => state.totalPageSize),
+    lastPage: computed(() => state.totalPage),
 
     hasPrevPage: computed(() => state.currentPage > 1),
     prevPage: computed(() => currentPage.value - 1),
@@ -76,9 +76,9 @@ export function usePagination({
 /**
  * @public
  */
-export function useGuaranteePageSize(currentPage: Ref<number>, totalPageSize: Ref<number>) {
+export function useGuaranteePageSize(currentPage: Ref<number>, totalPage: Ref<number>) {
   if (currentPage.value < 1) currentPage.value = 1
-  if (currentPage.value > totalPageSize.value) currentPage.value = totalPageSize.value
+  if (currentPage.value > totalPage.value) currentPage.value = totalPage.value
   if (Number.isInteger(currentPage.value) === false) currentPage.value = 1
 }
 
@@ -103,8 +103,8 @@ export function calcTotalPageSize(perPageSize: number, totalSize: number) {
 /**
  * @public
  */
-export function isValidPageSize(currentPage: Ref<number>, totalPageSize: Ref<number>) {
-  return Number.isInteger(currentPage.value) && currentPage.value >= 1 && currentPage.value <= totalPageSize.value
+export function isValidPageSize(currentPage: Ref<number>, totalPage: Ref<number>) {
+  return Number.isInteger(currentPage.value) && currentPage.value >= 1 && currentPage.value <= totalPage.value
 }
 
 /**
