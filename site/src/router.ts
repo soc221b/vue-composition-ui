@@ -1,13 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 export const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('vue-composition-ui'),
   routes: [
-    {
-      name: 'home',
-      path: '/',
-      component: () => import('@/App.vue'),
-    },
     {
       name: 'pagination',
       path: '/pagination',
