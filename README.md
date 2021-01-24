@@ -1,6 +1,9 @@
 # vue-composition-ui
 
-A Vue 3 composition UI library
+![PRs welcom](https://img.shields.io/badge/PRs-welcome-brightgreen)
+
+Vue Composition UI is a renderless component library, it helps you to build a highly customized UI based on Vue 3
+reactivity API.
 
 # Installation
 

@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1 id="logo">Vue Composition UI</h1>
+    <h1 id="logo"><a href="/">Vue Composition UI</a></h1>
 
     <div id="links">
       <template v-for="link of links" :key="link.href">
@@ -48,6 +48,10 @@ header {
 #logo {
   display: inline-block;
   grid-area: logo;
+}
+
+#logo > a {
+  text-decoration: none;
 }
 
 #links {
