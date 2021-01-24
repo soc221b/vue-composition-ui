@@ -4,6 +4,8 @@
 
 ## UsePaginationParams.currentPage property
 
+Current page number
+
 <b>Signature:</b>
 
 ```typescript

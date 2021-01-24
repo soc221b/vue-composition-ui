@@ -4,8 +4,20 @@
 
 ## UsePaginationReturnType.currentStartSize property
 
+1-indexed of first item of current page
+
 <b>Signature:</b>
 
 ```typescript
 readonly currentStartSize: number;
 ```
+
+## Example
+
+If perPageSize is 10, currentPage is 5, and totalSize is 50
+
+```
+console.log(currentStartSize) // 41 (41~50)
+
+```
+

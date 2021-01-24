@@ -4,6 +4,8 @@
 
 ## UsePaginationReturnType.totalSize property
 
+Total size of items
+
 <b>Signature:</b>
 
 ```typescript

@@ -4,8 +4,20 @@
 
 ## UsePaginationReturnType.pageRange property
 
+A range from 1 to the totalPage
+
 <b>Signature:</b>
 
 ```typescript
 readonly pageRange: number[];
 ```
+
+## Example
+
+If perPageSize is 10 and totalSize is 50:
+
+```
+console.log(pageRange) // [1, 2, 3, 4, 5]
+
+```
+

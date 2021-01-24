@@ -4,6 +4,8 @@
 
 ## UsePaginationReturnType.prevPage property
 
+The previous number of current page
+
 <b>Signature:</b>
 
 ```typescript

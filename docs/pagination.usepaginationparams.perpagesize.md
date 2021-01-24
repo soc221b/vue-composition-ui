@@ -4,6 +4,8 @@
 
 ## UsePaginationParams.perPageSize property
 
+Maximum size of each page
+
 <b>Signature:</b>
 
 ```typescript

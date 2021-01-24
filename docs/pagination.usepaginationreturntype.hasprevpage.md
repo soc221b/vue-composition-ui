@@ -4,6 +4,8 @@
 
 ## UsePaginationReturnType.hasPrevPage property
 
+Whether current page is not equals to first page
+
 <b>Signature:</b>
 
 ```typescript

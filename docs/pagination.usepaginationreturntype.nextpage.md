@@ -4,6 +4,8 @@
 
 ## UsePaginationReturnType.nextPage property
 
+The next number of current page
+
 <b>Signature:</b>
 
 ```typescript

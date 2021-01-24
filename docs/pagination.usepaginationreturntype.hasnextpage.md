@@ -4,6 +4,8 @@
 
 ## UsePaginationReturnType.hasNextPage property
 
+Whether current page is not equals to last page
+
 <b>Signature:</b>
 
 ```typescript

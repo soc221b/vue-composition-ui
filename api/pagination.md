@@ -24,47 +24,28 @@ export function usePagination({ currentPage, perPageSize, totalSize, }: UsePagin
 
 // @public (undocumented)
 export interface UsePaginationParams {
-    // (undocumented)
     currentPage: Ref<number>;
-    // (undocumented)
     perPageSize: Ref<number>;
-    // (undocumented)
     totalSize: Ref<number>;
 }
 
 // @public (undocumented)
 export interface UsePaginationReturnType {
-    // (undocumented)
     readonly currentEndSize: number;
-    // (undocumented)
     currentPage: number;
-    // (undocumented)
     readonly currentSize: number;
-    // (undocumented)
     readonly currentStartSize: number;
-    // (undocumented)
     readonly firstPage: number;
-    // (undocumented)
     readonly hasNextPage: boolean;
-    // (undocumented)
     readonly hasPrevPage: boolean;
-    // (undocumented)
     readonly isFirstPage: boolean;
-    // (undocumented)
     readonly isLastPage: boolean;
-    // (undocumented)
     readonly lastPage: number;
-    // (undocumented)
     readonly nextPage: number;
-    // (undocumented)
     readonly pageRange: number[];
-    // (undocumented)
     perPageSize: number;
-    // (undocumented)
     readonly prevPage: number;
-    // (undocumented)
     readonly totalPage: number;
-    // (undocumented)
     totalSize: number;
 }
 

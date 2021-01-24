@@ -4,8 +4,29 @@
 
 ## UsePaginationReturnType.currentEndSize property
 
+1-indexed of last item of current page
+
 <b>Signature:</b>
 
 ```typescript
 readonly currentEndSize: number;
 ```
+
+## Example 1
+
+If perPageSize is 10, currentPage is 5, and totalSize is 52
+
+```
+console.log(currentEndSize) // 50 (41~50)
+
+```
+
+## Example 2
+
+If perPageSize is 10, currentPage is 6, and totalSize is 52
+
+```
+console.log(currentEndSize) // 52
+
+```
+

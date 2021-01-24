@@ -15,7 +15,7 @@ export interface UsePaginationParams
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [currentPage](./pagination.usepaginationparams.currentpage.md) | Ref&lt;number&gt; |  |
-|  [perPageSize](./pagination.usepaginationparams.perpagesize.md) | Ref&lt;number&gt; |  |
-|  [totalSize](./pagination.usepaginationparams.totalsize.md) | Ref&lt;number&gt; |  |
+|  [currentPage](./pagination.usepaginationparams.currentpage.md) | Ref&lt;number&gt; | Current page number |
+|  [perPageSize](./pagination.usepaginationparams.perpagesize.md) | Ref&lt;number&gt; | Maximum size of each page |
+|  [totalSize](./pagination.usepaginationparams.totalsize.md) | Ref&lt;number&gt; | Total size of items |
 

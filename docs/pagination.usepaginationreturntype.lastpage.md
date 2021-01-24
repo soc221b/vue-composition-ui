@@ -4,6 +4,8 @@
 
 ## UsePaginationReturnType.lastPage property
 
+Equals to totalPage
+
 <b>Signature:</b>
 
 ```typescript

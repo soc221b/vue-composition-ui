@@ -15,20 +15,20 @@ export interface UsePaginationReturnType
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [currentEndSize](./pagination.usepaginationreturntype.currentendsize.md) | number |  |
-|  [currentPage](./pagination.usepaginationreturntype.currentpage.md) | number |  |
-|  [currentSize](./pagination.usepaginationreturntype.currentsize.md) | number |  |
-|  [currentStartSize](./pagination.usepaginationreturntype.currentstartsize.md) | number |  |
-|  [firstPage](./pagination.usepaginationreturntype.firstpage.md) | number |  |
-|  [hasNextPage](./pagination.usepaginationreturntype.hasnextpage.md) | boolean |  |
-|  [hasPrevPage](./pagination.usepaginationreturntype.hasprevpage.md) | boolean |  |
-|  [isFirstPage](./pagination.usepaginationreturntype.isfirstpage.md) | boolean |  |
-|  [isLastPage](./pagination.usepaginationreturntype.islastpage.md) | boolean |  |
-|  [lastPage](./pagination.usepaginationreturntype.lastpage.md) | number |  |
-|  [nextPage](./pagination.usepaginationreturntype.nextpage.md) | number |  |
-|  [pageRange](./pagination.usepaginationreturntype.pagerange.md) | number\[\] |  |
-|  [perPageSize](./pagination.usepaginationreturntype.perpagesize.md) | number |  |
-|  [prevPage](./pagination.usepaginationreturntype.prevpage.md) | number |  |
-|  [totalPage](./pagination.usepaginationreturntype.totalpage.md) | number |  |
-|  [totalSize](./pagination.usepaginationreturntype.totalsize.md) | number |  |
+|  [currentEndSize](./pagination.usepaginationreturntype.currentendsize.md) | number | 1-indexed of last item of current page |
+|  [currentPage](./pagination.usepaginationreturntype.currentpage.md) | number | Current page number |
+|  [currentSize](./pagination.usepaginationreturntype.currentsize.md) | number | Size of current page |
+|  [currentStartSize](./pagination.usepaginationreturntype.currentstartsize.md) | number | 1-indexed of first item of current page |
+|  [firstPage](./pagination.usepaginationreturntype.firstpage.md) | number | Always be 1 |
+|  [hasNextPage](./pagination.usepaginationreturntype.hasnextpage.md) | boolean | Whether current page is not equals to last page |
+|  [hasPrevPage](./pagination.usepaginationreturntype.hasprevpage.md) | boolean | Whether current page is not equals to first page |
+|  [isFirstPage](./pagination.usepaginationreturntype.isfirstpage.md) | boolean | Whether current page is equals to first page |
+|  [isLastPage](./pagination.usepaginationreturntype.islastpage.md) | boolean | Whether current page is equals to last page |
+|  [lastPage](./pagination.usepaginationreturntype.lastpage.md) | number | Equals to totalPage |
+|  [nextPage](./pagination.usepaginationreturntype.nextpage.md) | number | The next number of current page |
+|  [pageRange](./pagination.usepaginationreturntype.pagerange.md) | number\[\] | A range from 1 to the totalPage |
+|  [perPageSize](./pagination.usepaginationreturntype.perpagesize.md) | number | Maximum size of each page |
+|  [prevPage](./pagination.usepaginationreturntype.prevpage.md) | number | The previous number of current page |
+|  [totalPage](./pagination.usepaginationreturntype.totalpage.md) | number | Total page numbers |
+|  [totalSize](./pagination.usepaginationreturntype.totalsize.md) | number | Total size of items |
 

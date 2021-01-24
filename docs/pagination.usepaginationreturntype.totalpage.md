@@ -4,8 +4,29 @@
 
 ## UsePaginationReturnType.totalPage property
 
+Total page numbers
+
 <b>Signature:</b>
 
 ```typescript
 readonly totalPage: number;
 ```
+
+## Example 1
+
+If perPageSize is 10, and totalSize is 50
+
+```
+console.log(totalPage) // 5
+
+```
+
+## Example 2
+
+If perPageSize is 10, and totalSize is 51
+
+```
+console.log(totalPage) // 6
+
+```
+

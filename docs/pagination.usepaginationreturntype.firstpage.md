@@ -4,6 +4,8 @@
 
 ## UsePaginationReturnType.firstPage property
 
+Always be 1
+
 <b>Signature:</b>
 
 ```typescript
