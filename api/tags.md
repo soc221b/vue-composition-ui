@@ -4,23 +4,15 @@
 
 ```ts
 
+import { ComputedRef } from 'vue';
 import { Ref } from 'vue';
 
 // @alpha (undocumented)
-export function useTags({ tags, allowDuplicate, isSame }: UseTagsParams): {
-    addTag: (tag: unknown) => void;
-    deleteTag: (tag: unknown) => void;
+export function useTags<Tag>(tags: Ref<Tag[]>, isEqual?: (a: Tag, b: Tag) => boolean): {
+    add: (tag: Tag) => void;
+    remove: (tag: Tag) => void;
+    has: ComputedRef<(tag: Tag) => boolean>;
 };
-
-// @alpha (undocumented)
-export interface UseTagsParams {
-    // (undocumented)
-    allowDuplicate: boolean;
-    // (undocumented)
-    isSame?(a: unknown, b: unknown): boolean;
-    // (undocumented)
-    tags: Ref<any[]>;
-}
 
 
 // (No @packageDocumentation comment for this package)

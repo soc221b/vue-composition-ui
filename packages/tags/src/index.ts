@@ -1,41 +1,29 @@
-import { Ref } from 'vue'
+import { computed, Ref, ComputedRef } from 'vue'
 
 /**
  * @alpha
  */
-export interface UseTagsParams {
-  tags: Ref<any[]>
-  allowDuplicate: boolean
-  isSame?(a: unknown, b: unknown): boolean
-}
+export function useTags<Tag>(tags: Ref<Tag[]>, isEqual = (a: Tag, b: Tag) => a === b) {
+  const has: ComputedRef<(tag: Tag) => boolean> = computed(() => (tag: Tag) => {
+    return tags.value.some(t => isEqual(t, tag))
+  })
 
-/**
- * @alpha
- */
-export function useTags({ tags, allowDuplicate = false, isSame = (a: unknown, b: unknown) => a === b }: UseTagsParams) {
-  function isAlreadyExist(tag: unknown) {
-    if (allowDuplicate) {
-      return false
-    } else {
-      return tags.value.findIndex(t => isSame(t, tag)) !== -1
-    }
-  }
-
-  function addTag(tag: unknown) {
-    if (isAlreadyExist(tag)) return
+  function add(tag: Tag) {
+    if (has.value(tag)) return
 
     tags.value = tags.value.concat(tag)
   }
 
-  function deleteTag(tag: unknown) {
-    if (isAlreadyExist(tag) === false) return
+  function remove(tag: Tag) {
+    if (has.value(tag) === false) return
 
-    const foundIndex = tags.value.findIndex(t => isSame(t, tag))
+    const foundIndex = tags.value.findIndex(t => isEqual(t, tag))
     tags.value = tags.value.slice(0, foundIndex).concat(tags.value.slice(foundIndex + 1))
   }
 
   return {
-    addTag,
-    deleteTag,
+    add,
+    remove,
+    has,
   }
 }
