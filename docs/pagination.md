@@ -11,7 +11,7 @@
 |  [calcTotalPageSize(perPageSize, totalSize)](./pagination.calctotalpagesize.md) |  |
 |  [createRange(last, first)](./pagination.createrange.md) |  |
 |  [isValidPageSize(currentPage, totalPage)](./pagination.isvalidpagesize.md) |  |
-|  [useGuaranteePageSize(currentPage, totalPage)](./pagination.useguaranteepagesize.md) |  |
+|  [useGuaranteePageSize(currentPage, totalPage)](./pagination.useguaranteepagesize.md) | Modify currentPage if it is considered invalid |
 |  [usePagination({ currentPage, perPageSize, totalSize, })](./pagination.usepagination.md) |  |
 |  [validatePageNumber(name, number)](./pagination.validatepagenumber.md) |  |
 

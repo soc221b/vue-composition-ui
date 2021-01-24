@@ -16,7 +16,7 @@ export function createRange(last: number, first?: number): number[];
 // @public (undocumented)
 export function isValidPageSize(currentPage: Ref<number>, totalPage: Ref<number>): boolean;
 
-// @public (undocumented)
+// @public
 export function useGuaranteePageSize(currentPage: Ref<number>, totalPage: Ref<number>): void;
 
 // @public (undocumented)

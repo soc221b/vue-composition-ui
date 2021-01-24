@@ -4,6 +4,7 @@
 
 ## useGuaranteePageSize() function
 
+Modify currentPage if it is considered invalid
 
 <b>Signature:</b>
 
