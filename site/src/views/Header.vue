@@ -20,7 +20,7 @@ export default defineComponent({
     const links = [
       {
         label: 'API reference',
-        href: 'https://js-cosmos.github.io/vue-composition-ui/',
+        href: 'https://github.com/js-cosmos/vue-composition-ui/blob/HEAD/api-reference/index.md',
         target: '_blank',
       },
       {
