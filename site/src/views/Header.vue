@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1 id="logo"><a href="/">Vue Composition UI</a></h1>
+    <h1 id="logo"><router-link to="/">Vue Composition UI</router-link></h1>
 
     <div id="links">
       <template v-for="link of links" :key="link.href">
