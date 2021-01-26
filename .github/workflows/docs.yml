@@ -21,6 +21,7 @@ jobs:
           yarn build
           cd ..
           mv site/dist docs
+          cp docs/index.html docs/404.html
           git config --global user.email actions@users.noreply.github.com
           git config --global user.name "Action"
           git add docs --force
