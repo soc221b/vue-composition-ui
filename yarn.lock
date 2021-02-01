@@ -5627,9 +5627,9 @@ verror@1.10.0:
     extsprintf "^1.2.0"
 
 vite@^2.0.0-alpha.2:
-  version "2.0.0-beta.56"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-2.0.0-beta.56.tgz#b254ec4647ae1383d7c5b6f3fdb01f8971b5bcdd"
-  integrity sha512-MX20PSXT6wTfq37B9d/iTmfAut4kBT6DOquw60zVFRtnO7hR9sNmkM6pmoNyVuYJrlkhKZZqoO2DnYs3C7LKCw==
+  version "2.0.0-beta.60"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-2.0.0-beta.60.tgz#160d69968f29d05e0a4a22a6cc690d997fd793ea"
+  integrity sha512-B3qaJrSp0pbgjv2ROA7/0KRgJFs+QhH43OTo6Hau/dGopKotZFuE04FBRCjJ3+h0ePEH4DUG7+e2tUUgkywb0A==
   dependencies:
     esbuild "^0.8.34"
     postcss "^8.2.1"
