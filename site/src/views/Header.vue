@@ -66,11 +66,6 @@ header {
   color: black !important;
 }
 
-#links > a[target='_blank']::after {
-  margin-left: 4px;
-  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
-}
-
 #links > a:not(:last-child) {
   margin-right: 16px;
 }

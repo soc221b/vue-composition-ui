@@ -2,29 +2,20 @@
   <h2>Pagination</h2>
 
   <h3>
-    <a
-      href="https://github.com/js-cosmos/vue-composition-ui/blob/HEAD/examples/src/components/pagination/Element.vue"
-      target="_blank"
-      >Element</a
-    >
+    Element
+    <source-code-link path="pagination/Element.vue" />
   </h3>
   <element-example></element-example>
 
   <h3>
-    <a
-      href="https://github.com/js-cosmos/vue-composition-ui/blob/HEAD/examples/src/components/pagination/Vuetify.vue"
-      target="_blank"
-      >Vuetify</a
-    >
+    Vuetify
+    <source-code-link path="pagination/Vuetify.vue" />
   </h3>
   <vuetify-example></vuetify-example>
 
   <h3>
-    <a
-      href="https://github.com/js-cosmos/vue-composition-ui/blob/HEAD/examples/src/components/pagination/AntDesign.vue"
-      target="_blank"
-      >Ant design</a
-    >
+    Ant design
+    <source-code-link path="pagination/AntDesign.vue" />
   </h3>
   <ant-design-example></ant-design-example>
 </template>

@@ -11,12 +11,12 @@ export const router = createRouter({
     {
       name: 'pagination',
       path: '/pagination',
-      component: () => import('@/components/pagination/Index.vue'),
+      component: () => import('@/examples/pagination/index.vue'),
     },
     {
       name: 'tags',
       path: '/tags',
-      component: () => import('@/components/tags/Index.vue'),
+      component: () => import('@/examples/tags/index.vue'),
     },
   ],
 })

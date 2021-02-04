@@ -2,20 +2,14 @@
   <h2>Tags</h2>
 
   <h3>
-    <a
-      href="https://github.com/js-cosmos/vue-composition-ui/blob/HEAD/examples/src/components/tags/element/Index.vue"
-      target="_blank"
-      >Element</a
-    >
+    Element
+    <source-code-link path="tags/element/Index.vue" />
   </h3>
   <element-example></element-example>
 
   <h3>
-    <a
-      href="https://github.com/js-cosmos/vue-composition-ui/blob/HEAD/examples/src/components/tags/AntDesign.vue"
-      target="_blank"
-      >Ant design</a
-    >
+    Ant design
+    <source-code-link path="tags/AntDesign.vue" />
   </h3>
   <ant-design-example></ant-design-example>
 </template>
