@@ -60,6 +60,7 @@
     "release": "standard-version",
     "serve": "vite",
     "test": "jest",
-    "lint": "prettier --check ."
+    "lint": "prettier --check .",
+    "postinstall": "husky install"
   }
 }
