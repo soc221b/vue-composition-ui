@@ -3,6 +3,7 @@
     <h1 id="logo"><router-link to="/">Vue Composition UI</router-link></h1>
 
     <div id="links">
+      <img src="https://img.shields.io/badge/PRs-welcome-brightgreen" />
       <template v-for="link of links" :key="link.href">
         <a :href="link.href" :target="link.target">{{ link.label }}</a>
       </template>
@@ -66,6 +67,7 @@ header {
   color: black !important;
 }
 
+img,
 #links > a:not(:last-child) {
   margin-right: 16px;
 }

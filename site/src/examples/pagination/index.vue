@@ -1,22 +1,23 @@
 <template>
-  <h2>Pagination</h2>
+  <package-info />
 
-  <h3>
+  <h3>Example</h3>
+  <h4>
     Element
     <source-code-link path="pagination/Element.vue" />
-  </h3>
+  </h4>
   <element-example></element-example>
 
-  <h3>
+  <h4>
     Vuetify
     <source-code-link path="pagination/Vuetify.vue" />
-  </h3>
+  </h4>
   <vuetify-example></vuetify-example>
 
-  <h3>
+  <h4>
     Ant design
     <source-code-link path="pagination/AntDesign.vue" />
-  </h3>
+  </h4>
   <ant-design-example></ant-design-example>
 </template>
 
