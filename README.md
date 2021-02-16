@@ -1,44 +1,8 @@
 # vue-composition-ui
 
-![PRs welcom](https://img.shields.io/badge/PRs-welcome-brightgreen)
+# Document
 
-Vue Composition UI is a renderless component library, it helps you to build a highly customized UI based on Vue 3
-reactivity API.
-
-# Installation
-
-via npm
-
-```
-yarn add @vue-composition-ui/pagination
-```
-
-via cdn
-
-```html
-<script src="https://unpkg.com/@vue-composition-ui/pagination@latest"></script>
-```
-
-# Basic Usage
-
-esm:
-
-```ts
-import { usePagination, useGuaranteePageSize } from '@vue-composition-ui/pagination'
-```
-
-commonjs:
-
-```ts
-const { usePagination, useGuaranteePageSize } = '@vue-composition-ui/pagination'
-```
-
-browser:
-
-```ts
-// 'VueCompositionUi' + PackageNameWithPascalCase
-const { usePagination, useGuaranteePageSize } = window.VueCompositionUiPagination
-```
+https://iendeavor.github.io/vue-composition-ui/
 
 # Contributing
 

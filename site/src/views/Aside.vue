@@ -43,6 +43,14 @@ ul > li:not(:first-child) {
 }
 
 ul > li a {
+  border-radius: 4px;
+  padding: 4px 8px;
   color: black !important;
+  width: 100%;
+  display: inline-block;
+}
+
+ul > li a.router-link-active {
+  background-color: lightgray;
 }
 </style>
