@@ -59,7 +59,6 @@
     "build": "node scripts/build.js",
     "docs": "api-documenter markdown -i temp -o api-reference",
     "release": "standard-version",
-    "serve": "vite",
     "test": "jest",
     "lint": "prettier --check .",
     "postinstall": "husky install",
