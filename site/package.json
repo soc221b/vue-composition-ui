@@ -3,26 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
   },
   "dependencies": {
-    "@vue-composition-ui/pagination": "^0.0.1",
-    "@vue-composition-ui/tags": "^0.0.1",
-    "core-js": "^3.6.5",
-    "normalize.css": "^8.0.1",
-    "tslib": "^2.0.3",
-    "vue": "^3.0.5",
-    "vue-router": "^4.0.3"
+    "@vue-composition-ui/pagination": "latest",
+    "@vue-composition-ui/tags": "latest",
+    "normalize.css": "latest",
+    "vue": "next",
+    "vue-router": "next"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-typescript": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "^3.0.0",
-    "sass": "^1.26.5",
-    "sass-loader": "^8.0.2",
-    "typescript": "~3.9.3"
+    "@vitejs/plugin-vue": "latest",
+    "@vue/compiler-sfc": "latest",
+    "typescript": "latest",
+    "vite": "latest"
   }
 }

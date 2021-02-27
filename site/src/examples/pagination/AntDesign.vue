@@ -46,7 +46,7 @@ export default defineComponent({
     const {
       currentPage,
       perPageSize,
-      totalPageSize,
+      totalPage,
       totalSize,
       currentStartSize,
       currentEndSize,
@@ -57,26 +57,24 @@ export default defineComponent({
     } = usePagination({ currentPage: ref(1), perPageSize: ref(10), totalSize: ref(500) })
 
     const leftPageRange = computed(() => {
-      if (totalPageSize.value <= 7) return []
+      if (totalPage.value <= 7) return []
       else if (currentPage.value <= 3) return createRange(4)
       else if (currentPage.value <= 4) return createRange(5)
       else return [1, 'jumpPrev']
     })
 
     const middlePageRange = computed(() => {
-      if (totalPageSize.value <= 7) return createRange(totalPageSize.value)
+      if (totalPage.value <= 7) return createRange(totalPage.value)
       else if (currentPage.value <= 4) return []
-      else if (totalPageSize.value - currentPage.value <= 3) return []
+      else if (totalPage.value - currentPage.value <= 3) return []
       else return createRange(currentPage.value + 1, currentPage.value - 1)
     })
 
     const rightPageRange = computed(() => {
-      if (totalPageSize.value <= 7) return []
-      else if (totalPageSize.value - currentPage.value <= 2)
-        return createRange(totalPageSize.value, totalPageSize.value - 3)
-      else if (totalPageSize.value - currentPage.value <= 3)
-        return createRange(totalPageSize.value, totalPageSize.value - 4)
-      else return ['jumpNext', totalPageSize.value]
+      if (totalPage.value <= 7) return []
+      else if (totalPage.value - currentPage.value <= 2) return createRange(totalPage.value, totalPage.value - 3)
+      else if (totalPage.value - currentPage.value <= 3) return createRange(totalPage.value, totalPage.value - 4)
+      else return ['jumpNext', totalPage.value]
     })
 
     const pageRange = computed(() => leftPageRange.value.concat(middlePageRange.value, rightPageRange.value))
@@ -88,7 +86,7 @@ export default defineComponent({
       if ((currentPage.value as unknown) === '') {
         currentPage.value = 1
       }
-      useGuaranteePageSize(currentPage, totalPageSize)
+      useGuaranteePageSize(currentPage, totalPage)
     })
 
     watchEffect(() => {
@@ -120,7 +118,7 @@ export default defineComponent({
       goTo,
       prevPage,
       nextPage,
-      totalPageSize,
+      totalPage,
 
       currentPage,
       perPageSize,

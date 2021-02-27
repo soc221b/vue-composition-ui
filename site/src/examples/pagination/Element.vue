@@ -33,7 +33,7 @@ export default defineComponent({
       pageRange,
       currentPage,
       perPageSize,
-      totalPageSize,
+      totalPage,
       totalSize,
       hasPrevPage,
       hasNextPage,
@@ -48,7 +48,7 @@ export default defineComponent({
       if ((currentPage.value as unknown) === '') {
         currentPage.value = 1
       }
-      useGuaranteePageSize(currentPage, totalPageSize)
+      useGuaranteePageSize(currentPage, totalPage)
     })
 
     watchEffect(() => {
@@ -81,7 +81,7 @@ export default defineComponent({
       goTo,
       prevPage,
       nextPage,
-      totalPageSize,
+      totalPage,
 
       currentPage,
       perPageSize,
