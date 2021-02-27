@@ -6,17 +6,17 @@ export const router = createRouter({
     {
       name: 'home',
       path: '/',
-      component: () => import('@/views/Home.vue'),
+      component: () => import('./views/Home.vue'),
     },
     {
       name: 'pagination',
       path: '/pagination',
-      component: () => import('@/examples/pagination/index.vue'),
+      component: () => import('./examples/pagination/Index.vue'),
     },
     {
       name: 'tags',
       path: '/tags',
-      component: () => import('@/examples/tags/index.vue'),
+      component: () => import('./examples/tags/Index.vue'),
     },
   ],
 })
