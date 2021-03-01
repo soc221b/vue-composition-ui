@@ -7,33 +7,35 @@ const { Extractor } = require('@microsoft/api-extractor')
 ;(async () => {
   fs.rmdir(path.resolve(__dirname, '..', 'node_modules', '.cache'), { recursive: true })
 
-  await Promise.all(
-    packageDirInfos.map(async ([basename, absPath]) => {
-      fs.rmdir(path.resolve(absPath, 'dist'), { recursive: true })
+  await build(['shared', '/Users/yung-yuanchang/Documents/self/vue-composition-ui/packages/shared'])
 
-      await execa('rollup', ['-c', '--environment', [`TARGET:${basename}`].join(',')], { stdio: 'inherit' })
-
-      // rollup .d.ts
-      const extractorResult = Extractor.loadConfigAndInvoke(path.resolve(absPath, 'api-extractor.json'), {
-        localBuild: process.argv.indexOf('-l') !== -1 || process.argv.indexOf('--local') !== -1,
-        showVerboseMessages: true,
-      })
-      if (extractorResult.succeeded) {
-        await fs.copy(
-          path.resolve(__dirname, '..', 'dist', `${basename}.d.ts`),
-          path.resolve(absPath, 'dist', `${basename}.d.ts`),
-        )
-        await fs.rmdir(path.resolve(absPath, 'dist', 'packages'), { recursive: true })
-      } else {
-        console.error(
-          `API Extractor completed with ${extractorResult.errorCount} errors` +
-            ` and ${extractorResult.warningCount} warnings`,
-        )
-        process.exit(1)
-      }
-    }),
-  ).catch(error => {
+  await Promise.all(packageDirInfos.map(build)).catch(error => {
     console.log(error)
     process.exit(1)
   })
 })()
+
+async function build([basename, absPath]) {
+  fs.rmdir(path.resolve(absPath, 'dist'), { recursive: true })
+
+  await execa('rollup', ['-c', '--environment', [`TARGET:${basename}`].join(',')], { stdio: 'inherit' })
+
+  // rollup .d.ts
+  const extractorResult = Extractor.loadConfigAndInvoke(path.resolve(absPath, 'api-extractor.json'), {
+    localBuild: process.argv.indexOf('-l') !== -1 || process.argv.indexOf('--local') !== -1,
+    showVerboseMessages: true,
+  })
+  if (extractorResult.succeeded) {
+    await fs.copy(
+      path.resolve(__dirname, '..', 'dist', `${basename}.d.ts`),
+      path.resolve(absPath, 'dist', `${basename}.d.ts`),
+    )
+    await fs.rmdir(path.resolve(absPath, 'dist', 'packages'), { recursive: true })
+  } else {
+    console.error(
+      `API Extractor completed with ${extractorResult.errorCount} errors` +
+        ` and ${extractorResult.warningCount} warnings`,
+    )
+    process.exit(1)
+  }
+}
