@@ -1,0 +1,25 @@
+{
+  "version": "0.0.2",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "name": "@vue-composition-ui/time",
+  "main": "dist/time.cjs.prod.js",
+  "module": "dist/time.esm-bundler.js",
+  "unpkg": "dist/time.global.prod.js",
+  "jsdelivr": "dist/time.global.prod.js",
+  "types": "dist/time.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/js-cosmos/vue-composition-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/js-cosmos/vue-composition-ui/issues"
+  },
+  "homepage": "https://github.com/js-cosmos/vue-composition-ui/tree/develop/packages/time",
+  "author": "Ernest <iendeavor.github.io@gmail.com>",
+  "dependencies": {
+    "@vue-composition-ui/shared": "^0.0.2"
+  }
+}

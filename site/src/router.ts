@@ -18,5 +18,10 @@ export const router = createRouter({
       path: '/tags',
       component: () => import('./examples/tags/Index.vue'),
     },
+    {
+      name: 'time',
+      path: '/time',
+      component: () => import('./examples/time/Index.vue'),
+    },
   ],
 })

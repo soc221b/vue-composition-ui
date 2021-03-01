@@ -1,0 +1,22 @@
+{
+  "version": "0.0.2",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "name": "@vue-composition-ui/shared",
+  "main": "dist/shared.cjs.prod.js",
+  "module": "dist/shared.esm-bundler.js",
+  "unpkg": "dist/shared.global.prod.js",
+  "jsdelivr": "dist/shared.global.prod.js",
+  "types": "dist/shared.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/js-cosmos/vue-composition-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/js-cosmos/vue-composition-ui/issues"
+  },
+  "homepage": "https://github.com/js-cosmos/vue-composition-ui/tree/develop/packages/shared",
+  "author": "Ernest <iendeavor.github.io@gmail.com>"
+}
