@@ -1,5 +1,5 @@
 import { ref } from 'vue'
-import { usePagination } from '../../packages/pagination'
+import { usePagination } from '../src'
 
 it('should keep reactivity', () => {
   const originalCurrentPage = ref(1)
